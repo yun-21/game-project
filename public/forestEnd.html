@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root');
+        const allScreen = document.createElement('div');
+        const title = document.createElement('h1');
+        const img = document.createElement('img');
+        const selectBox = document.createElement('div');
+        const yesSelect = document.createElement('h1');
+        const yesPath = document.createElement('a');
+
+        root.appendChild(allScreen);
+        allScreen.appendChild(title);
+        allScreen.appendChild(img);
+        allScreen.appendChild(selectBox);
+        selectBox.appendChild(yesSelect);
+        yesSelect.appendChild(yesPath);
+
+        document.body.style.margin = 0;
+        document.body.style.padding = 0;
+        root.style.height = "100vh";
+        root.style.width = "100vw";
+        root.style.backgroundColor = "black";
+        allScreen.style.display = "flex";
+        allScreen.style.alignItems = "center";
+        allScreen.style.justifyContent = "center";
+        allScreen.style.flexDirection = "column";
+        allScreen.style.gap = "30px";
+
+        title.innerHTML = `-END-아무것도 보이지 않아 숲에서 굴러 정신을 잃었다.`;
+        title.style.color = "blue";
+
+        img.src ="https://i.ibb.co/WkrFQtL/forestsleep.png";
+        img.style.height = "600px";
+        img.style.width = "1200px";
+
+        yesPath.innerHTML = "돌아가기";
+        yesPath.style.textDecorationLine = "none";
+        yesPath.style.color = "red";
+
+        yesPath.href ="roadRight.html";
+
+        yesPath.addEventListener('mouseover', function () {
+            yesPath.style.fontSize = "50px";
+        });
+        yesPath.addEventListener('mouseout', function () {
+            yesPath.style.fontSize = "32px";
+        });
+    </script>
+</body>
+
+</html>

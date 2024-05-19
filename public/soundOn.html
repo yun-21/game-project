@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root');
+        const allScreen = document.createElement('div');
+        const title = document.createElement('h1');
+        const img = document.createElement('img');
+        const selectBox = document.createElement('div');
+        const yesSelect = document.createElement('h1');
+        const yesPath = document.createElement('a');
+        const noSelect = document.createElement('h1');
+        const noPath = document.createElement('a');
+        const shouting1 = document.createElement('div');
+        const shouting2 = document.createElement('div');
+        const shouting3 = document.createElement('div');
+
+        root.appendChild(allScreen);
+        allScreen.appendChild(title);
+        allScreen.appendChild(img);
+        allScreen.appendChild(selectBox);
+        selectBox.appendChild(yesSelect);
+        selectBox.appendChild(noSelect);
+        yesSelect.appendChild(yesPath);
+        noSelect.appendChild(noPath);
+        root.appendChild(shouting1);
+        root.appendChild(shouting2);
+        root.appendChild(shouting3);
+
+        document.body.style.margin = 0;
+        document.body.style.padding = 0;
+        root.style.height = "100vh";
+        root.style.width = "100vw";
+        root.style.backgroundColor = "black";
+        allScreen.style.display = "flex";
+        allScreen.style.alignItems = "center";
+        allScreen.style.justifyContent = "center";
+        allScreen.style.flexDirection = "column";
+        allScreen.style.gap = "30px";
+        allScreen.style.position = "relative";
+
+        shouting1.style.position = "absolute";
+        shouting1.style.top = "200px"
+        shouting1.style.width = "100vw";
+        shouting1.style.height = "50%";
+        shouting2.style.position = "absolute";
+        shouting2.style.top = "200px"
+        shouting2.style.width = "100vw";
+        shouting2.style.height = "50%";
+        shouting3.style.position = "absolute";
+        shouting3.style.top = "200px"
+        shouting3.style.width = "100vw";
+        shouting3.style.height = "50%";
+
+        shouting1.innerHTML = "<h1 style='font-size:200px; text-align:center;'>누구 없나요?!</h1>";
+        shouting1.style.color = "red";
+
+        shouting2.innerHTML = "<h1 style='font-size:100px; text-align:center;'>누구 없나요?!....</h1>";
+        shouting2.style.color = "red";
+        shouting2.style.display = "none";
+
+        shouting3.innerHTML = "<h1 style='font-size:40px; text-align:center;'>누구 없나요?!........</h1>";
+        shouting3.style.color = "red";
+        shouting3.style.display = "none";
+
+        function hideShout1() {
+            shouting1.style.display = "none";
+            shouting2.style.display = "block";
+            self.setTimeout("hideShout2()", 1000);
+        }
+        function hideShout2() {
+            shouting2.style.display = "none";
+            shouting3.style.display = "block";
+            self.setTimeout("hideShout3()", 1000);
+        }
+        function hideShout3() {
+            shouting3.style.display = "none";
+            title.innerHTML = `메아리 치는 내 목소리가 섬뜩하게 느껴질 정도로 이 마을은 조용했다..
+        <br>저 끝에 집 안에서 불빛이 약간 보이는 것 같다. 들어가볼까?`;
+            title.style.color = "red";
+
+            img.src = "https://i.ibb.co/pZQwhk5/leftMap.png";
+            img.style.height = "600px";
+
+            selectBox.style.display = "flex";
+            selectBox.style.gap = "80px";
+
+            yesPath.innerHTML = "들어간다.";
+            noPath.innerHTML = "들어가지 않는다.";
+        }
+        self.setTimeout("hideShout1()", 1000);
+
+
+
+
+        yesPath.style.textDecorationLine = "none";
+        noPath.style.textDecorationLine = "none";
+        yesPath.style.color = "red";
+        noPath.style.color = "red";
+
+        yesPath.href = "homeIn.html";
+        noPath.href = "homeOut.html";
+
+        yesPath.addEventListener('mouseover', function () {
+            yesPath.style.fontSize = "50px";
+        });
+        yesPath.addEventListener('mouseout', function () {
+            yesPath.style.fontSize = "32px";
+        });
+
+        noPath.addEventListener('mouseover', function () {
+            noPath.style.fontSize = "50px";
+        });
+        noPath.addEventListener('mouseout', function () {
+            noPath.style.fontSize = "32px";
+        });
+    </script>
+</body>
+
+</html>

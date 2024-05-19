@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root');
+        const allScreen = document.createElement('div');
+        const title = document.createElement('h1');
+        const img = document.createElement('img');
+        const selectBox = document.createElement('div');
+        const yesSelect = document.createElement('h1');
+        const yesPath = document.createElement('a');
+        const alarm = document.createElement('div');
+
+        root.appendChild(allScreen);
+        allScreen.appendChild(title);
+        allScreen.appendChild(img);
+        allScreen.appendChild(selectBox);
+        selectBox.appendChild(yesSelect);
+        yesSelect.appendChild(yesPath);
+        root.appendChild(alarm);
+
+        document.body.style.margin = 0;
+        document.body.style.padding = 0;
+        root.style.height = "100vh";
+        root.style.width = "100vw";
+        root.style.backgroundColor = "black";
+        allScreen.style.display = "flex";
+        allScreen.style.alignItems = "center";
+        allScreen.style.justifyContent = "center";
+        allScreen.style.flexDirection = "column";
+        allScreen.style.gap = "30px";
+        allScreen.style.position = "relative";
+
+        alarm.style.position = "absolute";
+        alarm.style.top = "200px"
+        alarm.style.width = "100vw";
+        alarm.style.height = "50%";
+        alarm.innerHTML = "<h1 style='font-size:100px; text-align:center; color:blue;'>띠리링.. 띠리리링..<br>이게 무슨 소리지??</h1>";
+
+
+        alarm.style.display = "none";
+
+        function ggum() {
+            title.innerHTML = `아니... 이게 뭔..`;
+            title.style.color = "red";
+            img.src = "https://i.ibb.co/L93ZHSC/leftIn.png";
+            img.style.height = "600px";
+        }
+        self.setTimeout("ggum()", 1000);
+
+        function alarmCall() {
+            alarm.style.display = "block";
+        }
+        self.setTimeout("alarmCall()", 3000);
+
+        function ggumEnding() {
+            alarm.style.display = "none";
+            title.innerHTML = `-END-아 뭐야 꿈이잖아`;
+            title.style.color = "blue";
+            img.src = "https://i.ibb.co/QQ11rGr/letf-In-Dream.png";
+            img.style.height = "600px";
+            yesPath.innerHTML = "뒤로가기";
+            yesPath.style.textDecorationLine = "none";
+            yesPath.style.color = "red";
+        }
+        self.setTimeout("ggumEnding()", 5000);
+
+
+        yesPath.href = "ggumendingBefore.html"
+
+        yesPath.addEventListener('mouseover', function () {
+            yesPath.style.fontSize = "50px";
+        });
+        yesPath.addEventListener('mouseout', function () {
+            yesPath.style.fontSize = "32px";
+        });
+    </script>
+</body>
+
+</html>

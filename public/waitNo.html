@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root');
+        const allScreen = document.createElement('div');
+        const title = document.createElement('h1');
+        const img = document.createElement('img');
+        const selectBox = document.createElement('div');
+        const yesSelect = document.createElement('h1');
+        const yesPath = document.createElement('a');
+
+        root.appendChild(allScreen);
+        allScreen.appendChild(title);
+        allScreen.appendChild(img);
+        allScreen.appendChild(selectBox);
+        selectBox.appendChild(yesSelect);
+        yesSelect.appendChild(yesPath);
+
+        document.body.style.margin = 0;
+        document.body.style.padding = 0;
+        root.style.height = "100vh";
+        root.style.width = "100vw";
+        root.style.backgroundColor = "black";
+        allScreen.style.display = "flex";
+        allScreen.style.alignItems = "center";
+        allScreen.style.justifyContent = "center";
+        allScreen.style.flexDirection = "column";
+        allScreen.style.gap = "30px";
+
+        title.innerHTML = `도로가를 따라 걷다보니 운영 중인 편의점이 보였다.
+        <br>달려가보니 카운터에 사람이 서있었다. 들어가자!`;
+        title.style.color = "red";
+
+        img.src ="https://i.ibb.co/f9RhcCr/mart.png";
+        img.style.height = "600px";
+
+        yesPath.innerHTML ="들어간다.";
+        yesPath.style.textDecorationLine = "none";
+        yesPath.style.color = "blue";
+
+        yesPath.href="martEnd.html";
+
+        yesPath.addEventListener('mouseover', function () {
+            yesPath.style.fontSize = "50px";
+        });
+        yesPath.addEventListener('mouseout', function () {
+            yesPath.style.fontSize = "32px";
+        });
+    </script>
+</body>
+</html>

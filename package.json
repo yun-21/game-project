@@ -1,0 +1,11 @@
+{
+  "name": "game-project",
+  "version": "1.0.0",
+  "description": "게임을 만들어볼게요",
+  "main": "firstmain.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "신지윤",
+  "license": "MIT"
+}

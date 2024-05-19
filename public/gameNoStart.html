@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root');
+        const allScreen = document.createElement('div');
+        const title = document.createElement('h1');
+        const img = document.createElement('img');
+        const selectBox = document.createElement('div');
+        const BackSelect = document.createElement('h1');
+        const BackPath = document.createElement('a');
+
+        root.appendChild(allScreen);
+        allScreen.appendChild(title);
+        allScreen.appendChild(img);
+        allScreen.appendChild(selectBox);
+        selectBox.appendChild(BackSelect);
+        BackSelect.appendChild(BackPath);
+
+        document.body.style.margin = 0;
+        document.body.style.padding = 0;
+        root.style.height = "100vh";
+        root.style.width = "100vw";
+        root.style.backgroundColor = "black";
+        allScreen.style.display = "flex";
+        allScreen.style.alignItems = "center";
+        allScreen.style.justifyContent = "center";
+        allScreen.style.flexDirection = "column";
+        allScreen.style.gap = "30px";
+
+        title.innerHTML = "게임을 안하신다뇨 다시 돌아가세요.";
+        title.style.color = "red";
+
+        img.src = "https://i.ibb.co/tqktxq2/no-Start-Picture.png";
+        img.style.height = "600px";
+
+        BackPath.innerHTML = "돌아가기";
+        BackPath.style.textDecorationLine = "none";
+        BackPath.style.color = "red";
+
+        BackPath.href = "../";
+
+        BackPath.addEventListener('mouseover', function () {
+            yesPath.style.fontSize = "50px";
+        });
+        BackPath.addEventListener('mouseout', function () {
+            yesPath.style.fontSize = "32px";
+        });
+    </script>
+</body>
+
+</html>
